@@ -2,7 +2,7 @@
 #############################################################
 
 :date: 2014-03-05 19:57
-:modified: 2014-03-16 12:49
+:modified: 2014-03-16 15:41
 :tags: python
 :category: Python
 :slug: thirty-python-language-features-and-tricks-you-may-not-know
@@ -339,7 +339,7 @@ Dictionary comprehensions
 
 
 Inverting a dictionary using a dictionary comprehension
-======================================================
+=======================================================
 
 .. code-block:: pycon
 
