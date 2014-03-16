@@ -40,13 +40,13 @@ commonly known language features and tricks appearing first.
 A `table of contents`_ is given at the end.
 
 *Update - March 14th, 2014*
-    Roy Keyes made a great suggestion of turning this article into a GitHub
-    repository to allow readers to make improvements or additions through pull
-    requests. The repository is now at
+    `Roy Keyes <http://roycoding.github.io>`_ made a great suggestion of
+    turning this article into a GitHub repository to allow readers to make
+    improvements or additions through pull requests. The repository is now at
     `https://github.com/sahands/python-by-example
     <https://github.com/sahands/python-by-example>`_. Feel free to fork, add
-    improvements or additions and submit pull requests. I will update the
-    this page periodically with the new additions.
+    improvements or additions and submit pull requests. I will update the this
+    page periodically with the new additions.
 
 *Update - March 8th, 2014*
     This article generated a lot of good discussion on Reddit
@@ -297,6 +297,9 @@ Flattening lists:
    >>> flatten(a)
    [1, 2, 3, 4, 5, 6, 7, 8]
 
+Note: according to Python's `documentation
+<http://docs.python.org/2.7/library/functions.html#sum>`_ on ``sum``,
+``itertools.chain.from_iterable`` is the preferred method for this.
 
 Generator expressions
 =====================
