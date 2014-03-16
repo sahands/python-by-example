@@ -335,7 +335,7 @@ Dictionary comprehensions
    
 
 
-Invertng a dictionary using a dictionary comprehension
+Inverting a dictionary using a dictionary comprehension
 ======================================================
 
 .. code-block:: pycon
