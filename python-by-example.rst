@@ -2,6 +2,7 @@
 #############################################################
 
 :date: 2014-03-05 19:57
+:modified: 2014-03-16 12:49
 :tags: python
 :category: Python
 :slug: thirty-python-language-features-and-tricks-you-may-not-know
@@ -621,7 +622,7 @@ Cartesian products (``itertools.product``)
     (2, 5)
     (3, 4)
     (3, 5)
-    >>> for p in itertools.product(*([[0, 1]] * 4)):
+    >>> for p in itertools.product([0, 1], repeat=4):
     ...     print ''.join(str(x) for x in p)
     ... 
     0000
