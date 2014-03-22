@@ -45,7 +45,7 @@ A `table of contents`_ is given at the end.
     improvements or additions through pull requests. The repository is now at
     `https://github.com/sahands/python-by-example
     <https://github.com/sahands/python-by-example>`_. Feel free to fork, add
-    improvements or additions and submit pull requests. I will update the this
+    improvements or additions and submit pull requests. I will update this
     page periodically with the new additions.
 
 *Update - March 8th, 2014*
