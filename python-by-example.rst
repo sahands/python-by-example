@@ -2,7 +2,7 @@
 #############################################################
 
 :date: 2014-03-05 19:57
-:modified: 2014-03-16 15:41
+:modified: 2014-03-23 17:27
 :tags: python
 :category: Python
 :slug: thirty-python-language-features-and-tricks-you-may-not-know
@@ -256,6 +256,23 @@ Grouping adjacent list items using zip
     >>> group_adjacent(a, 1)
     [(1,), (2,), (3,), (4,), (5,), (6,)]
 
+
+Sliding windows (:math:`n`-grams) using zip and iterators
+=========================================================
+
+.. code-block:: pycon
+
+    >>> def n_grams(a, n):
+    ...     z = [iter(a[i:]) for i in range(n)]
+    ...     return zip(*z)
+    ... 
+    >>> a = [1, 2, 3, 4, 5, 6]
+    >>> n_grams(a, 3)
+    [(1, 2, 3), (2, 3, 4), (3, 4, 5), (4, 5, 6)]
+    >>> n_grams(a, 2)
+    [(1, 2), (2, 3), (3, 4), (4, 5), (5, 6)]
+    >>> n_grams(a, 4)
+    [(1, 2, 3, 4), (2, 3, 4, 5), (3, 4, 5, 6)]
 
 
 Inverting a dictionary using zip
