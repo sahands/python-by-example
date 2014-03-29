@@ -776,6 +776,7 @@ Grouping rows by a given key (``itertools.groupby``)
 
 .. code-block:: pycon
 
+    >>> from operator import itemgetter
     >>> import itertools
     >>> with open('contactlenses.csv', 'r') as infile:
     ...     data = [line.strip().split(',') for line in infile]
@@ -811,7 +812,7 @@ Grouping rows by a given key (``itertools.groupby``)
     presbyopic      	hypermetrope    	yes             	reduced         	none            
     presbyopic      	hypermetrope    	yes             	normal          	none   
     
-    >>> data.sort(key=lambda r: r[-1])
+    >>> data.sort(key=itemgetter(-1))
     >>> for value, group in itertools.groupby(data, lambda r: r[-1]):
     ...     print '-----------'
     ...     print 'Group: ' + value
