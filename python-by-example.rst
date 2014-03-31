@@ -262,12 +262,9 @@ Sliding windows (:math:`n`-grams) using zip and iterators
 
 .. code-block:: pycon
 
+    >>> from itertools import islice
     >>> def n_grams(a, n):
-    ...     def advance(iterator, k):
-    ...         for __ in range(k):
-    ...             next(iterator)
-    ...         return iterator
-    ...     z = [advance(iter(a), k) for k in range(n)]
+    ...     z = (islice(a, i, None) for i in range(n))
     ...     return zip(*z)
     ... 
     >>> a = [1, 2, 3, 4, 5, 6]
