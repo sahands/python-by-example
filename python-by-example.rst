@@ -2,7 +2,7 @@
 #############################################################
 
 :date: 2014-03-05 19:57
-:modified: 2014-03-23 17:27
+:modified: 2014-04-09 10:24
 :tags: python
 :category: Python
 :slug: thirty-python-language-features-and-tricks-you-may-not-know
@@ -38,6 +38,13 @@ The list is very roughly ordered by difficulty, with the easier and more
 commonly known language features and tricks appearing first.
 
 A `table of contents`_ is given at the end.
+
+*Update - April 9th, 2014*
+    As you can see, the article has been growing, currently having 38 items in
+    it, mostly thanks to comments from readers. As such the number 30 in title
+    of the article is no longer accurate but I chose to leave it as is since
+    that's the original title the article was shared as, making it more
+    recognizable and easier to find.
 
 *Update - March 14th, 2014*
     `Roy Keyes <http://roycoding.github.io>`_ made a great suggestion of
@@ -96,7 +103,6 @@ Unpacking
    3
    >>> d
    4
-   
 
 
 Unpacking for swapping variables
@@ -109,6 +115,7 @@ Unpacking for swapping variables
    >>> a, b = b, a
    >>> a, b
    (2, 1)
+
 
 Extended unpacking (Python 3 only)
 ==================================
@@ -135,6 +142,7 @@ Negative indexing
   >>> a[-3]
   8
 
+
 List slices (``a[start:end]``)
 ==============================
 
@@ -144,6 +152,7 @@ List slices (``a[start:end]``)
   >>> a[2:8]
   [2, 3, 4, 5, 6, 7]
 
+
 List slices with negative indexing
 ==================================
 
@@ -152,6 +161,7 @@ List slices with negative indexing
   >>> a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   >>> a[-4:-2]
   [7, 8]
+
 
 List slices with step (``a[start:end:step]``)
 =============================================
@@ -179,6 +189,7 @@ List slices with negative step
   [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
   >>> a[::-2] 
   [10, 8, 6, 4, 2, 0]
+
 
 List slice assignment
 =====================
@@ -210,6 +221,35 @@ Naming slices (``slice(start, end, step)``)
     [3, 4, 5]
 
 
+Iterating over list index and value pairs (``enumerate``)
+=========================================================
+
+.. code-block:: pycon
+
+    >>> a = ['Hello', 'world', '!']
+    >>> for i, x in enumerate(a):
+    ...     print '{}: {}'.format(i, x)
+    ... 
+    0: Hello
+    1: world
+    2: !
+
+
+Iterating over dictionary key and value pairs (``dict.iteritems``)
+==================================================================
+
+.. code-block:: pycon
+
+    >>> m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+    >>> for k, v in m.iteritems():
+    ...     print '{}: {}'.format(k, v)
+    ... 
+    a: 1
+    c: 3
+    b: 2
+    d: 4
+
+Note: use ``dict.items`` in Python 3.
 
 Zipping and unzipping lists and iterables
 =========================================
@@ -275,6 +315,7 @@ Sliding windows (:math:`n`-grams) using zip and iterators
     >>> n_grams(a, 4)
     [(1, 2, 3, 4), (2, 3, 4, 5), (3, 4, 5, 6)]
 
+
 Inverting a dictionary using zip
 ================================
 .. code-block:: pycon
@@ -318,6 +359,7 @@ Note: according to Python's `documentation
 <http://docs.python.org/2.7/library/functions.html#sum>`_ on ``sum``,
 ``itertools.chain.from_iterable`` is the preferred method for this.
 
+
 Generator expressions
 =====================
 
@@ -338,8 +380,6 @@ Generator expressions
     408
 
 
-
-
 Dictionary comprehensions
 =========================
 
@@ -352,7 +392,6 @@ Dictionary comprehensions
     >>> m = {x: 'A' + str(x) for x in range(10)}
     >>> m
     {0: 'A0', 1: 'A1', 2: 'A2', 3: 'A3', 4: 'A4', 5: 'A5', 6: 'A6', 7: 'A7', 8: 'A8', 9: 'A9'}
-   
 
 
 Inverting a dictionary using a dictionary comprehension
@@ -380,7 +419,7 @@ Named tuples (``collections.namedtuple``)
     1.0
     >>> p.y
     2.0
-   
+
 
 Inheriting from named tuples:
 ===================================
@@ -508,10 +547,8 @@ Double-ended queue with maximum length (``collections.deque``)
     7, 8, 9
 
 
-
 Ordered dictionaries (``collections.OrderedDict``)
 ==================================================
-
 
 .. code-block:: pycon
 
@@ -528,7 +565,6 @@ Ordered dictionaries (``collections.OrderedDict``)
 
 Default dictionaries (``collections.defaultdict``)
 ==================================================
-
 
 .. code-block:: pycon
 
@@ -555,6 +591,7 @@ Default dictionaries (``collections.defaultdict``)
     >>> m['b']
     '[default value]'
    
+
 
 Using default dictionaries to represent simple trees
 ====================================================
@@ -597,10 +634,8 @@ Using default dictionaries to represent simple trees
 (See `https://gist.github.com/hrldcpr/2012250 <https://gist.github.com/hrldcpr/2012250>`_ for more on this.)
 
 
-
 Mapping objects to unique counting numbers (``collections.defaultdict``)
 ========================================================================
-
 
 .. code-block:: pycon
 
@@ -617,9 +652,9 @@ Mapping objects to unique counting numbers (``collections.defaultdict``)
     >>> value_to_numeric_map['b']
     1
 
+
 Largest and smallest elements (``heapq.nlargest`` and ``heapq.nsmallest``)
 ==========================================================================
-
   
 .. code-block:: pycon
 
@@ -629,9 +664,9 @@ Largest and smallest elements (``heapq.nlargest`` and ``heapq.nsmallest``)
     >>> heapq.nlargest(5, a)
     [100, 100, 99, 98, 98]
 
+
 Cartesian products (``itertools.product``)
 ==========================================
-
 
 .. code-block:: pycon
 
@@ -666,7 +701,6 @@ Cartesian products (``itertools.product``)
 Combinations and combinations with replacement (``itertools.combinations`` and ``itertools.combinations_with_replacement``)
 ===========================================================================================================================
 
-
 .. code-block:: pycon
 
     >>> for c in itertools.combinations([1, 2, 3, 4, 5], 3):
@@ -692,9 +726,9 @@ Combinations and combinations with replacement (``itertools.combinations`` and `
     23
     33
 
+
 Permutations (``itertools.permutations``)
 =========================================
-
 
 .. code-block:: pycon
 
@@ -725,6 +759,7 @@ Permutations (``itertools.permutations``)
    4231
    4312
    4321
+
 
 Chaining iterables (``itertools.chain``)
 ========================================
@@ -764,8 +799,6 @@ Chaining iterables (``itertools.chain``)
    (1, 3, 4)
    (2, 3, 4)
    (1, 2, 3, 4)
-
-
 
 
 Grouping rows by a given key (``itertools.groupby``)
@@ -846,6 +879,14 @@ Grouping rows by a given key (``itertools.groupby``)
     pre-presbyopic  	hypermetrope    	no              	normal          	soft            
     presbyopic      	hypermetrope    	no              	normal          	soft      
 
+
+Start a local HTTP server in any directory
+==========================================
+
+.. code-block:: bash
+
+    [10:26] $ python -m SimpleHTTPServer 5000
+    Serving HTTP on 0.0.0.0 port 5000 ...
 
 
 _`Table of contents`
