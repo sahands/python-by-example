@@ -40,11 +40,11 @@ commonly known language features and tricks appearing first.
 A `table of contents`_ is given at the end.
 
 *Update - April 9th, 2014*
-    As you can see, the article has been growing, currently having 38 items in
-    it, mostly thanks to comments from readers. As such the number 30 in title
-    of the article is no longer accurate but I chose to leave it as is since
-    that's the original title the article was shared as, making it more
-    recognizable and easier to find.
+    As you can see the article has been growing with currently 38 items in it,
+    mostly thanks to comments from readers. As such the number 30 in the title
+    is no longer accurate. However, I chose to leave it as is since that's the
+    original title the article was shared as, making it more recognizable and
+    easier to find.
 
 *Update - March 14th, 2014*
     `Roy Keyes <http://roycoding.github.io>`_ made a great suggestion of
