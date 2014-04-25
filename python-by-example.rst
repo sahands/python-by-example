@@ -2,7 +2,7 @@
 #############################################################
 
 :date: 2014-03-05 19:57
-:modified: 2014-04-09 10:24
+:modified: 2014-04-25 15:59
 :tags: python
 :category: Python
 :slug: thirty-python-language-features-and-tricks-you-may-not-know
@@ -887,6 +887,42 @@ Start a local HTTP server in any directory
 
     [10:26] $ python -m SimpleHTTPServer 5000
     Serving HTTP on 0.0.0.0 port 5000 ...
+
+Learn the Zern of Python
+==========================================
+
+.. code-block:: pycon
+
+    >>> import this
+    The Zen of Python, by Tim Peters
+
+    Beautiful is better than ugly.
+    Explicit is better than implicit.
+    Simple is better than complex.
+    Complex is better than complicated.
+    Flat is better than nested.
+    Sparse is better than dense.
+    Readability counts.
+    Special cases aren't special enough to break the rules.
+    Although practicality beats purity.
+    Errors should never pass silently.
+    Unless explicitly silenced.
+    In the face of ambiguity, refuse the temptation to guess.
+    There should be one-- and preferably only one --obvious way to do it.
+    Although that way may not be obvious at first unless you're Dutch.
+    Now is better than never.
+    Although never is often better than *right* now.
+    If the implementation is hard to explain, it's a bad idea.
+    If the implementation is easy to explain, it may be a good idea.
+    Namespaces are one honking great idea -- let's do more of those!
+
+
+Use C-Style Braces Instead of Indentation to Denote Scopes
+==========================================================
+
+.. code-block:: pycon
+   
+   >>> from __future__ import braces
 
 
 _`Table of contents`
