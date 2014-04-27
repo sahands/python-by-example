@@ -888,8 +888,8 @@ Start a local HTTP server in any directory
     [10:26] $ python -m SimpleHTTPServer 5000
     Serving HTTP on 0.0.0.0 port 5000 ...
 
-Learn the Zern of Python
-==========================================
+Learn the Zen of Python
+=======================
 
 .. code-block:: pycon
 
