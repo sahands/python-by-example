@@ -1,13 +1,14 @@
 30 Python Language Features and Tricks You May Not Know About
 #############################################################
 
-:date: 2014-03-05 19:57
-:modified: 2014-04-25 15:59
-:tags: python
-:category: Python
-:slug: thirty-python-language-features-and-tricks-you-may-not-know
-:author: Sahand Saba
-:summary: A list of Python tips and tricks. See how many of them you already know.
+:date:      2014-03-05 19:57
+:modified:  2014-05-19 10:28
+:tags:      python
+:category:  Python
+:slug:      thirty-python-language-features-and-tricks-you-may-not-know
+:author:    Sahand Saba
+:summary:   A list of Python tips and tricks. See how many of them you already
+            know.
 
 .. role:: python(code)
    :language: python 
@@ -271,9 +272,8 @@ Grouping adjacent list items using zip
 .. code-block:: pycon
 
     >>> a = [1, 2, 3, 4, 5, 6]
-    >>> zip(*([iter(a)] * 2))
-    [(1, 2), (3, 4), (5, 6)]
 
+    >>> # Using iterators
     >>> group_adjacent = lambda a, k: zip(*([iter(a)] * k))
     >>> group_adjacent(a, 3)
     [(1, 2, 3), (4, 5, 6)]
@@ -282,13 +282,10 @@ Grouping adjacent list items using zip
     >>> group_adjacent(a, 1)
     [(1,), (2,), (3,), (4,), (5,), (6,)]
 
-    >>> zip(a[::2], a[1::2])
-    [(1, 2), (3, 4), (5, 6)]
 
-    >>> zip(a[::3], a[1::3], a[2::3])
-    [(1, 2, 3), (4, 5, 6)]
-
-    >>> group_adjacent = lambda a, k: zip(*(a[i::k] for i in range(k)))
+    >>> # Using slices
+    >>> from itertools import islice
+    >>> group_adjacent = lambda a, k: zip(*(islice(a, i, None, k) for i in range(k)))
     >>> group_adjacent(a, 3)
     [(1, 2, 3), (4, 5, 6)]
     >>> group_adjacent(a, 2)
@@ -880,8 +877,8 @@ Grouping rows by a given key (``itertools.groupby``)
     presbyopic      	hypermetrope    	no              	normal          	soft      
 
 
-Start a local HTTP server in any directory
-==========================================
+Start a static HTTP server in any directory
+===========================================
 
 .. code-block:: bash
 
